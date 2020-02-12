@@ -103,16 +103,32 @@ function moveForward(rover, board){
 function moveBackward(rover){
   switch(rover.direction){
     case "N" :
+      if (board[rover.y + 1][rover.x] === "*") {
+        console.log(`you shall not pass`);
+        } else {
       rover.y++
+        }
       break;
     case "S" :
+      if (board[rover.y - 1][rover.x] === "*") {
+        console.log(`you shall not pass`);
+        } else {
       rover.y--
+        }
       break;
     case "W" : 
+    if (board[rover.y][rover.x + 1] === "*") {
+      console.log(`you shall not pass`);
+      } else {
       rover.x++
+      }
       break;
     case "E" :
+      if (board[rover.y][rover.x - 1] === "*") {
+        console.log(`you shall not pass`);
+        } else {
       rover.x--
+        }
       break;
   }
   return `${rover.direction}`
